@@ -1,5 +1,4 @@
 import axios from "axios";
-import values from "redux-form/lib/values";
 
 export const READ_EVENTS = 'READ_EVENTS'
 export const CREATE_EVENTS = 'CREATE_EVENTS'
@@ -15,7 +14,7 @@ export const readEvents = () => async dispatch => {
     })
 }
 
-export const postEvents = values => async dispatch => {
+export const postEvent = values => async dispatch => {
     const response = await axios.post(`${ROOT_URL}/events${QUERYSTRING}`,values)
     dispatch({
         type: CREATE_EVENTS,
